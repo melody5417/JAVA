@@ -127,23 +127,31 @@ $ open /usr/local/Cellar/maven3.6.2/conf/setting.xml
 
 ### 构建第一个 spring boot 程序
 
-* 图一 创建工程
+* 图一 创建工程 
+![图一 创建工程](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图一.png)
 
 Create new project -> Spring Initializr -> Default (https://start.spring.io) -> Next
 
 * 图二 填写工程信息
+![图二 填写工程信息](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图二.png)
 
 * 图三 选择工程依赖
+![图三 选择工程依赖](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图三.png)
 
 Web -> Spring Web
 
 * 图四 确定工程信息
+![图四 确定工程信息](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图四.png)
 
 * 图五 设置 maven 自动 import
-	
-* 图六 工程预览
+![图五 设置 maven 自动 import](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图五.png)
 
-* 图七
+* 图六 工程预览
+![图六 工程预览](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图六.png)
+
+* 图七 sync 下载依赖
+![图七 sync 下载依赖](https://raw.githubusercontent.com/melody5417/JAVA/master/JAVA_1/图七.png)
+
 此时如果 Build 信息栏显示正在 Sync，恭喜你，代理配置成功，IDEA 自动下载依赖包。
 如果自动下载失败，可以在当前目录下运行 ```mvn install```可以手动安装依赖。
 
