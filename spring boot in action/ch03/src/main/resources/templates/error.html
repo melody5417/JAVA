@@ -8,8 +8,10 @@
     <div class="errorPage">
       <span class="oops">Oops!</span><br/>
       <img th:src="@{/MissingPage.png}"></img>
+      <!-- path 显示请求的路径 -->
       <p>There seems to be a problem with the page you requested 
          (<span text="${path}">/readingList</span>).</p>
+      <!-- 显示错误信息  -->
       <p th:text="${'Details: ' + message}"></p>
     </div>
   </html>

@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Configuration
+// 扩展了 WebSecurityConfigurerAdapter 的配置类
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
@@ -19,12 +20,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http
       .authorizeRequests()
-        .antMatchers("/").access("hasRole('READER')")
-        .antMatchers("/**").permitAll()
+        .antMatchers("/").access("hasRole('READER')") // 要求登陆者有READER角色
+        .antMatchers("/**").permitAll() // 其他所有请求路径向所有用户开发访问权限
       .and()
       .formLogin()
-        .loginPage("/login")
+        .loginPage("/login") // 设置登陆表单的路径
         .failureUrl("/login?error=true");
+        // 将登陆页和登陆失败页（带有一个error属性）指定到了/login
   }
   
   @Override
@@ -32,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
               AuthenticationManagerBuilder auth) throws Exception {
     auth
       .userDetailsService(new UserDetailsService() {
+        // 定义自定义 UserDetailsService
         @Override
         public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {

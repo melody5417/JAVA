@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+
+<html>
+<div class="errorPage">
+    <span class="oops">Oops!</span><br/>
+    <img th:src="@{/MissingPage.png}"></img>
+    <!-- path 显示请求的路径 -->
+    <p>There seems to be a problem with the page you requested
+        (<span text="${path}"></span>).</p>
+    <!-- 显示错误信息  -->
+    <p th:text="${'Details: ' + message}"></p>
+</div>
+</html>
+
+</html>

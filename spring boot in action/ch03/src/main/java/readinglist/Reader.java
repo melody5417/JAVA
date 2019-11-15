@@ -10,7 +10,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity
+@Entity // JPA实体
+// 实现 UserDetails 这样Reader就能代表Spring Security里的用户了
 public class Reader implements UserDetails {
 
   private static final long serialVersionUID = 1L;
@@ -45,8 +46,11 @@ public class Reader implements UserDetails {
     this.password = password;
   }
 
+  // UserDetails methods
+
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
+    // 授予READER权限
     return Arrays.asList(new SimpleGrantedAuthority("ROLE_READER"));
   }
 
